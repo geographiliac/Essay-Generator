@@ -8,7 +8,7 @@ Essay Generator is a JavaScript utility that lets you input an array of quotes f
 
 ## How to use it
 
-`essay.gen(Array quotes, Boolean htmlFormat)`
+`essaygen.generate(Array quotes, Boolean htmlFormat)`
 
 Returns the generated essay
 `quotes` - an array of strings that you want to include as quotes from the literature.
