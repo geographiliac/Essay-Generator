@@ -18,4 +18,5 @@ Returns the generated essay
 ###### Examples
 
 `essaygen.generate(["To be or not to be, that is the question","How much wood would a woodchuck chuck?"],"short story")`
+
 `essaygen.generate(someQuotes,"play",true)`
