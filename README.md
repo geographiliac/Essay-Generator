@@ -22,6 +22,17 @@ Returns the generated essay
 
 ###### Examples
 
-`essaygen.generate({quotes:["To be or not to be, that is the question","How much wood would a woodchuck chuck?"]})`
+```javascript
+essaygen.generate({
+  quotes:["To be or not to be, that is the question","How much wood would a woodchuck chuck?"]
+})
+```
 
-`essaygen.generate({quotes:someQuotes,type:"play",protagonist:"Captain Yeya",writer:"Wilfred Claus"})`
+```javascript
+essaygen.generate({
+  quotes:someQuotes,
+  type:"play",
+  protagonist:"Captain Yeya",
+  writer:"Wilfred Claus"
+})
+```
