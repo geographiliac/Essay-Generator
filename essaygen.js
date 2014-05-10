@@ -3,10 +3,10 @@ var essaygen = {
         // set option defaults
         var litType = "short story";
         var protagonist = "the protagonist";
-        var techniques = ["alliteration", "simile", "metaphor", "personification"];
+        var techniques = ["alliteration", "simile", "metaphor", "personification", "listing", "anthropomorphism", "assonance", "euphemism", "pathetic fallacy"];
         var writerName = "the writer";
         var outputType = "default";
-        var adjectives = ["lively", "realistic", "cheerful", "dramatic"];
+        var adjectives = ["lively", "realistic", "cheerful", "dramatic", "happy", "joyous", "carefree", "radiant", "lighthearted"];
         
         var lineBreaker = "\n";
         
@@ -58,9 +58,9 @@ var essaygen = {
         ];
         var finalEssay = [];
         
-        for (i=0; i<quotes.length; i++) {
+        while (quotes.length > 0) {
             var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
-            var quote = quotes[i];
+            var quote = quotes.shift();
             var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
             var paragraph = point + " " + "\"" + quote + "\"" + ". " + explanation;
             finalEssay.push(paragraph);
