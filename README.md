@@ -1,10 +1,10 @@
 # Essay Generator
 
-### Nonsensical essay generator
-
-## About
+#### Nonsensical essay generator
 
 Essay Generator is a JavaScript utility that lets you input an array of quotes from the literature you are meant to be studying, and generates a nonsensical essay with the Point, Example, Explanation layout.
+
+Check it out live at http://2shrt.co.nf/?essaygen
 
 ###### Example output
 
