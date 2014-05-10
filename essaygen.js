@@ -59,12 +59,6 @@ var essaygen = {
         var finalEssay = [];
         
         for (i=0;i<quotes.length;i++) {
-            /*var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
-            var quote = quotes.shift();
-            var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
-            var paragraph = point + " " + "\"" + quote + "\"" + ". " + explanation;
-            finalEssay.push(paragraph);*/
-            
             var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
             while (point.indexOf("%t%") != -1 || point.indexOf("%l%") != -1 || point.indexOf("%w%") != -1 || point.indexOf("%p%") != -1 || point.indexOf("%a%") != -1 || point.indexOf("%q%") != -1) {
                 point = point.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
