@@ -9,8 +9,6 @@ var essaygen = {
         var outputType = "default";
         var adjectives = ["lively", "realistic", "cheerful", "dramatic", "happy", "joyous", "carefree", "radiant", "lighthearted"];
         
-        var lineBreaker = "\n";
-        
         if (options) {
             if ("type" in options) {
                 litType = options.type;
@@ -32,8 +30,12 @@ var essaygen = {
             }
         }
         
+        var paragraphBefore = "";
+        var paragraphAfter = "";
+        
         if (outputType == "html") {
-            lineBreaker = "<br>";
+            paragraphBefore = "<p>";
+            paragraphAfter = "</p>";
         }
         
         var randomInArray = function(array){
@@ -70,10 +72,10 @@ var essaygen = {
                 explanation = explanation.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
             }
             
-            var paragraph = point + ". " + explanation;
+            var paragraph = paragraphBefore + point + ". " + explanation + paragraphAfter;
             finalEssay.push(paragraph);
         }
         
-        return finalEssay.join(lineBreaker);
+        return finalEssay.join("");
     }
 };
