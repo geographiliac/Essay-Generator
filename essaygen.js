@@ -1,5 +1,6 @@
 var essaygen = {
-    generate: function(quotes,options) {
+    generate: function(options) {
+        var quotes = options.quotes;
         // set option defaults
         var litType = "short story";
         var protagonist = "the protagonist";
