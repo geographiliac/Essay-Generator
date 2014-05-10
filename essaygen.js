@@ -41,28 +41,41 @@ var essaygen = {
 
         var points = [
             [
-                "The writer skilfully uses language and techniques like " + randomInArray(techniques) + " and " + randomInArray(techniques) + " to effectively convey his message.",
-                "In this " + litType + ", " + writerName + " tries to emphasize " + protagonist + "'s personality.",
-                "The writer uses a combination of " + randomInArray(techniques) + " and " + randomInArray(techniques) + " to bring out " + protagonist + "'s " + randomInArray(adjectives) + " thoughts and feelings to the reader."
+                "The writer skilfully uses language and techniques like %t% and %t% to effectively convey his message.",
+                "In this %l%, %w% tries to emphasize %p%'s personality.",
+                "The writer uses a combination of %t% and %t% to bring out %p%'s %a% thoughts and feelings to the reader."
             ],[
-                "An example of this can be found in this quote:",
-                "This makes the " + litType + " seem more " + randomInArray(adjectives) + " and " + randomInArray(adjectives) + ", as shown in the following quote:"
+                "An example of this can be found in this quote: '%q%'",
+                "This makes the %l% seem more %a% and %a%, as shown in the following quote: '%q%'"
             ]
         ];
         var explanations = [
             [
-                "This suggests that " + writerName + " feels very strongly about the situation, as shown in the " + randomInArray(techniques) + " in the above quote. It causes the reader to associate the two things, which adds to the " + randomInArray(adjectives) + " atmosphere of the " + litType +"."
+                "This suggests that %w% feels very strongly about the situation, as shown in the %t% in the above quote. It causes the reader to associate the two things, which adds to the %a% atmosphere of the %l%."
             ],[
-                "Also, the writer effectively uses " + randomInArray(techniques) + " in his " + litType + ", to let the reader experience " + protagonist + "'s " + randomInArray(adjectives) + " feelings."
+                "Also, the writer effectively uses %t% in his %l%, to let the reader experience %p%'s %a% feelings."
             ]
         ];
         var finalEssay = [];
         
-        while (quotes.length > 0) {
-            var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
+        for (i=0;i<quotes.length;i++) {
+            /*var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
             var quote = quotes.shift();
             var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
             var paragraph = point + " " + "\"" + quote + "\"" + ". " + explanation;
+            finalEssay.push(paragraph);*/
+            
+            var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
+            while (point.indexOf("%t%") != -1 || point.indexOf("%l%") != -1 || point.indexOf("%w%") != -1 || point.indexOf("%p%") != -1 || point.indexOf("%a%") != -1 || point.indexOf("%q%") != -1) {
+                point = point.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
+            }
+            
+            var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
+            while (explanation.indexOf("%t%") != -1 || explanation.indexOf("%l%") != -1 || explanation.indexOf("%w%") != -1 || explanation.indexOf("%p%") != -1 || explanation.indexOf("%a%") != -1 || explanation.indexOf("%q%") != -1) {
+                explanation = explanation.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
+            }
+            
+            var paragraph = point + ". " + explanation;
             finalEssay.push(paragraph);
         }
         
