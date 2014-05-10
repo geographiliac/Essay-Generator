@@ -16,7 +16,7 @@ var essaygen = {
             if ("protagonist" in options) {
                 protagonist = options.protagonist;
             }
-            if ("protagonist" in options) {
+            if ("techniques" in options) {
                 techniques = options.techniques;
             }
             if ("writer" in options) {
