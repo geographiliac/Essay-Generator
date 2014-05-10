@@ -10,7 +10,7 @@ Essay Generator is a JavaScript utility that lets you input an array of quotes f
 
 "In this short story, the writer tries to emphasize the protagonist's personality. An example of this can be found in this quote: 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?'. This suggests that the writer feels very strongly about the situation, as shown in the metaphor in the above quote. It causes the reader to associate the two things, which adds to the radiant atmosphere of the short story. Also, the writer effectively uses assonance in his short story, to let the reader experience the protagonist's cheerful feelings.
 
-## How to use it
+## Usage
 
 `essaygen.generate(Object options)`
 
