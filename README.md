@@ -8,7 +8,7 @@ Check it out live at http://2shrt.co.nf/?essaygen
 
 ###### Example output
 
-> "In this short story, the writer tries to emphasize the protagonist's personality. An example of this can be found in this quote: 'How much wood would a woodchuck chuck if a woodchuck could chuck wood?'. This suggests that the writer feels very strongly about the situation, as shown in the metaphor in the above quote. It causes the reader to associate the two things, which adds to the radiant atmosphere of the short story. Also, the writer effectively uses assonance in his short story, to let the reader experience the protagonist's cheerful feelings.
+> The writer skilfully uses language and techniques like euphemism and assonance to effectively convey his message. This makes the short story seem more dramatic and cheerful, as shown in the following quote: 'How much wood would a woodchuck chuck?'. This suggests that the writer feels very strongly about the situation, as shown by the simile in the above quote. It causes the reader to associate the two things, which adds to the cheerful atmosphere of the short story. However, 'woodchuck' suggests that the protagonist also felt lighthearted and carefree, which builds up the reader's interest and makes the short story more exciting.
 
 ## Usage
 
