@@ -32,14 +32,30 @@ var essaygen = {
         
         var paragraphBefore = "";
         var paragraphAfter = "";
+        var joinChar = "\n";
         
         if (outputType == "html") {
             paragraphBefore = "<p>";
+            joinChar = "";
             paragraphAfter = "</p>";
         }
         
         var randomInArray = function(array){
             return array[Math.round(Math.random()*(array.length-1))];
+        }
+        
+        var randomWord = function(string){
+            var regex = new RegExp("\\.|,|;|:|-","g");
+            string = string.replace(regex,""); // remove punctuation
+            var array = string.split(" ");
+            return array[Math.round(Math.random()*(array.length-1))];
+        }
+        
+        var replaceVariables = function(string) {
+            while (string.indexOf("%t%") != -1 || string.indexOf("%l%") != -1 || string.indexOf("%w%") != -1 || string.indexOf("%p%") != -1 || string.indexOf("%a%") != -1 || string.indexOf("%q%") != -1 || string.indexOf("%qw%") != -1) {
+                string = string.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]).replace("%qw%",randomWord(quotes[i]));
+            }
+            return string;
         }
 
         var points = [
@@ -54,9 +70,11 @@ var essaygen = {
         ];
         var explanations = [
             [
-                "This suggests that %w% feels very strongly about the situation, as shown in the %t% in the above quote. It causes the reader to associate the two things, which adds to the %a% atmosphere of the %l%."
+                "This suggests that %w% feels very strongly about the situation, as shown by the %t% in the above quote. It causes the reader to associate the two things, which adds to the %a% atmosphere of the %l%.",
+                "'%qw%' suggests that %p% felt extremely %a% about the events in the %l%."
             ],[
-                "Also, the writer effectively uses %t% in his %l%, to let the reader experience %p%'s %a% feelings."
+                "Also, the writer effectively uses %t% in his %l%, to let the reader experience %p%'s %a% feelings.",
+                "However, '%qw%' suggests that %p% also felt %a% and %a%, which builds up the reader's interest and makes the %l% more exciting."
             ]
         ];
         var finalEssay = [];
@@ -64,18 +82,18 @@ var essaygen = {
         for (i=0;i<quotes.length;i++) {
             var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
             while (point.indexOf("%t%") != -1 || point.indexOf("%l%") != -1 || point.indexOf("%w%") != -1 || point.indexOf("%p%") != -1 || point.indexOf("%a%") != -1 || point.indexOf("%q%") != -1) {
-                point = point.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
+                point = replaceVariables(point);
             }
             
             var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
             while (explanation.indexOf("%t%") != -1 || explanation.indexOf("%l%") != -1 || explanation.indexOf("%w%") != -1 || explanation.indexOf("%p%") != -1 || explanation.indexOf("%a%") != -1 || explanation.indexOf("%q%") != -1) {
-                explanation = explanation.replace("%t%",randomInArray(techniques)).replace("%l%",litType).replace("%w%",writerName).replace("%p%",protagonist).replace("%a%",randomInArray(adjectives)).replace("%q%",quotes[i]);
+                explanation = replaceVariables(explanation);
             }
             
             var paragraph = paragraphBefore + point + ". " + explanation + paragraphAfter;
             finalEssay.push(paragraph);
         }
         
-        return finalEssay.join("");
+        return finalEssay.join(joinChar);
     }
 };
