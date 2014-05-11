@@ -81,14 +81,10 @@ var essaygen = {
         
         for (i=0;i<quotes.length;i++) {
             var point = randomInArray(points[0]) + " " + randomInArray(points[1]);
-            while (point.indexOf("%t%") != -1 || point.indexOf("%l%") != -1 || point.indexOf("%w%") != -1 || point.indexOf("%p%") != -1 || point.indexOf("%a%") != -1 || point.indexOf("%q%") != -1) {
-                point = replaceVariables(point);
-            }
+            point = replaceVariables(point);
             
             var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
-            while (explanation.indexOf("%t%") != -1 || explanation.indexOf("%l%") != -1 || explanation.indexOf("%w%") != -1 || explanation.indexOf("%p%") != -1 || explanation.indexOf("%a%") != -1 || explanation.indexOf("%q%") != -1) {
-                explanation = replaceVariables(explanation);
-            }
+            explanation = replaceVariables(explanation);
             
             var paragraph = paragraphBefore + point + ". " + explanation + paragraphAfter;
             finalEssay.push(paragraph);
