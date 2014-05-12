@@ -54,7 +54,7 @@ essaygen.generate({
 // full example, all options overridden
 essaygen.generate({
   quotes: ["Roll up, roll up for the mystery tour", "Step right this way", "The magical mystery tour is waiting to take you away"],
-  type: "novel",
+  type: "film",
   protagonist: "Paul",
   techniques: ["pathetic fallacy", "irony", "euphemism", "metaphor"],
   adjectives: ["magical", "mysterious"],
