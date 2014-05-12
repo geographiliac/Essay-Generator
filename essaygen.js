@@ -77,8 +77,8 @@ var essaygen = {
                 "The writer uses a combination of %t% and %t% to bring out %p%'s %a% thoughts and feelings to the reader.",
                 "One of the ways that %w% makes the %l% more exciting is by focusing on %p%'s %n%. This makes the reader feel more familiar with them and lets the reader feel their %n% and %n%."
             ],[
-                "An example of this can be found in this quote: '%q%'",
-                "This makes the %l% seem more %a% and %a%, as shown in the following quote: '%q%'",
+                "An example of this can be found in this quote: '%q%'.",
+                "This makes the %l% seem more %a% and %a%, as shown in the following quote: '%q%'.",
                 "He does this in the following quote: '%q%', which brings out the %a% nature of the situation in the %l%."
             ]
         ];
@@ -101,7 +101,7 @@ var essaygen = {
             var explanation = randomInArray(explanations[0]) + " " + randomInArray(explanations[1]);
             explanation = replaceVariables(explanation);
             
-            var paragraph = paragraphBefore + point + ". " + explanation + paragraphAfter;
+            var paragraph = paragraphBefore + point + " " + explanation + paragraphAfter;
             finalEssay.push(paragraph);
         }
         
