@@ -28,7 +28,9 @@ Returns the generated essay
     * Default `["lively", "realistic", "cheerful", "dramatic", "happy", "joyous", "carefree", "radiant", "lighthearted"]`
   * `writer` - the name of the writer.
     * Default `"the writer"`.
-  * `output` - the type of output you want, either `"default"` or `"html"`. `"default"` breaks lines with a newline character while `"html"` breaks lines with `"<br>"`.
+  * `nouns` - an array of nouns you want the essay to include.
+    * Default `["sorrow", "kindness", "happiness", "joy", "vanity", "lightheartedness", "greediness", "radiance", "personality", "kindheartedness", "charity", "selflessness", "selfishness"]`
+  * `output` - the type of output you want, either `"default"` or `"html"`.
     * Default `"default"`
 
 ###### Examples
@@ -45,5 +47,18 @@ essaygen.generate({
   type:"play",
   protagonist:"Captain Yeya",
   writer:"Wilfred Claus"
+})
+```
+
+```javascript
+// full example, all options overridden
+essaygen.generate({
+  quotes: ["Roll up, roll up for the mystery tour", "Step right this way", "The magical mystery tour is waiting to take you away"],
+  type: "novel",
+  protagonist: "Paul",
+  techniques: ["pathetic fallacy", "irony", "euphemism", "metaphor"],
+  adjectives: ["magical", "mysterious"],
+  writer: "the nowhere man",
+  output: "html"
 })
 ```
