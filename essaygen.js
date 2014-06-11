@@ -3,7 +3,7 @@ var essaygen = {
         var quotes = options.quotes;
         // set option defaults
         var litType = "short story";
-        var protagonist = "the protagonist";
+        var protagonist = ["the protagonist"];
         var techniques = ["alliteration", "simile", "metaphor", "personification", "listing", "anthropomorphism", "assonance", "euphemism", "pathetic fallacy"];
         var writerName = "the writer";
         var outputType = "default";
@@ -15,7 +15,11 @@ var essaygen = {
                 litType = options.type;
             }
             if ("protagonist" in options) {
-                protagonist = options.protagonist;
+                if (typeof options.protagonist == "string") {
+                    protagonist = [options.protagonist];
+                } else if (options.protagonist.constructor == Array) {
+                    protagonist = options.protagonist;
+                }
             }
             if ("techniques" in options) {
                 techniques = options.techniques;
@@ -62,7 +66,7 @@ var essaygen = {
                    string.indexOf("%qw%") != -1 || string.indexOf("%n%") != -1) {
                     string = string.replace("%t%",randomInArray(techniques))
                                    .replace("%l%",litType).replace("%w%",writerName)
-                                   .replace("%p%",protagonist)
+                                   .replace("%p%",randomInArray(protagonist))
                                    .replace("%a%",randomInArray(adjectives))
                                    .replace("%q%",quotes[i]).replace("%qw%",randomWord(quotes[i]))
                                    .replace("%n%",randomInArray(nouns));
