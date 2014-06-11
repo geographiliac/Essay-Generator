@@ -79,7 +79,8 @@ var essaygen = {
             ],[
                 "An example of this can be found in this quote: '%q%'.",
                 "This makes the %l% seem more %a% and %a%, as shown in the following quote: '%q%'.",
-                "He does this in the following quote: '%q%', which brings out the %a% nature of the situation in the %l%."
+                "He does this in the following quote: '%q%', which brings out the %a% nature of the situation in the %l%.",
+                "This is demonstrated in this quote: '%q%'."
             ]
         ];
         var explanations = [
