@@ -55,7 +55,7 @@ essaygen.generate({
 essaygen.generate({
   quotes: ["Roll up, roll up for the mystery tour", "Step right this way", "The magical mystery tour is waiting to take you away"],
   type: "film",
-  protagonist: "Paul",
+  protagonist: ["Paul", "John", "George", "Ringo"],
   techniques: ["pathetic fallacy", "irony", "euphemism", "metaphor"],
   adjectives: ["magical", "mysterious"],
   writer: "the nowhere man",
